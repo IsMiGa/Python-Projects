@@ -5,6 +5,8 @@ Created on Thu Aug 18 19:15:15 2022
 @author: isalo
 """
 
+""" TAKE VALUES FROM THE ETF DATABASE AND RENDER A TEMPLATE WITH A TABLE TO DISPLAY THEM"""
+
 import sqlite3, flask
 from flask import Flask, render_template
 
