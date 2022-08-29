@@ -4,6 +4,8 @@ Created on Tue Jul  5 19:01:23 2022
 
 @author: isalo
 """
+""" THIS IS THE WEB SCRAPPER, IT SCRAPS THE SYMBOLS, FULL NAMES AND PRICES OF THE TOP 25 ETFs"""
+
 
 import webbrowser, sys, requests, time, datetime , sys, requests, bs4
 from la_base import *
@@ -48,7 +50,7 @@ while present_time < datetime.datetime(2022, 8, 28, 12, 40, 0):
             
         
         #LOOK FOR THE TAGS THAT CONTAIN THE ETF PRICE
-        #CLICK ON THE PRICE TO FIND THE ATTRIBUTES
+        # REMEMBER: CLICK ON THE PRICE TO FIND THE ATTRIBUTES
         for i in range(inicio, final):
             siglas = elementos_texto[i]
             set_1 = sopa.find_all(attrs = {'data-symbol' : siglas})
@@ -61,7 +63,7 @@ while present_time < datetime.datetime(2022, 8, 28, 12, 40, 0):
                         tag = uno
                         tags.append(tag)
  
-            #GETTING THE ETF PRICE AND INSERTING IT ON A LIST
+            #GETTING THE ETF PRICE AND APPENDING IT TO A LIST
             precio = tag['value']
             prices.append(precio)
             prices = prices
@@ -69,8 +71,6 @@ while present_time < datetime.datetime(2022, 8, 28, 12, 40, 0):
         # LINKS DICTIONARY
         for i in range(inicio, final):
             nombre = nombres[i]
-            precio = prices[i]
-               
             links[nombre] = link + elementos_texto[i]
                
         
