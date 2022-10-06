@@ -65,6 +65,7 @@ while present_time < datetime.datetime(2022, 9, 9, 12, 40, 0):
                     if uno == dos:
                         tag = uno
                         tags.append(tag)
+                        break
  
             #GETTING THE ETF PRICE AND INSERTING IT ON A LIST
             precio = tag['value']
